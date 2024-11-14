@@ -112,6 +112,8 @@ class Leet(object):
             self.spamuser = msg.nick
             return
 
+        self.spamuser = msg.nick
+
         mytime = str(datetime.datetime.now().time())
         if mytime[:3] == "13:":
             
@@ -128,14 +130,12 @@ class Leet(object):
             if users[0] == msg.nick:
                 msg.reply("** You %s %s **" % (msg.nick, "are now LuckyLuke"))
                 self.luckyluke = msg.nick
-                self.spamuser = msg.nick
 
                 with open('%s/luckyluke.txt' % self.folder, 'w') as file:
                     file.write(msg.nick)
 
             else:
                 msg.reply("Spotlight was on %s" % users[0])
-                self.spamuser = msg.nick
         else:
             msg.reply("It is not time for LuckyLuke")
 
