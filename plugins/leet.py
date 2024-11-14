@@ -128,6 +128,7 @@ class Leet(object):
             if users[0] == msg.nick:
                 msg.reply("** You %s %s **" % (msg.nick, "are now LuckyLuke"))
                 self.luckyluke = msg.nick
+                self.spamuser = msg.nick
 
                 with open('%s/luckyluke.txt' % self.folder, 'w') as file:
                     file.write(msg.nick)
